@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-function BestDogPage() {
+function BestDogPage(onViewResume) {
   return (
     <div className="App">
       <h1>Best Dog</h1>
@@ -16,7 +16,8 @@ function BestDogPage() {
       <p>If you have any questions or suggestions, feel free to reach out to us. We would love to hear from you!</p>
       <a href="mailto:bestdog@example.com">Email Us</a>
       <p>Or watch this youtube video: </p>
-      <a href="https://www.youtube.com/watch?v=V4LnorVVxfw" target="_blank">Best Dog Video</a>
+      <a href="https://www.youtube.com/watch?v=V4LnorVVxfw" target="_blank">Best Dog Video</a><br></br>
+      <button onClick={onViewResume}>View Resume</button>
     
     </div>
   );
@@ -153,7 +154,7 @@ function App() {
         <button onClick={() => setView('resume')}>Resume</button>
       </nav>
       <main>
-        {view === 'best-dog' && <BestDogPage />}
+        {view === 'best-dog' && <BestDogPage onViewResume={() => setView('resume')} />}
         {view === 'resume' && <ResumePage />}
       </main>
     </div>
