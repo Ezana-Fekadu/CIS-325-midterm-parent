@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-function BestDogPage(onViewResume) {
+function BestDogPage({onViewResume}) {
   return (
     <div className="App">
       <h1>Best Dog</h1>
